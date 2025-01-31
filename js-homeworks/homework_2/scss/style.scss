@@ -1,0 +1,148 @@
+@import "_reset.scss";
+
+
+[class*="__container"] {
+	max-width: 1200px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
+
+h1 {
+	color: red;
+	font-size: 30px;
+}
+
+.header {
+	text-align: center;
+	padding: 0 100px;
+
+	&__text {
+		font-size: 18px;
+	}
+}
+
+.page {
+	width: 500px;
+	text-align: center;
+	margin: 0 auto;
+	padding: 50px 0 50px;
+}
+
+.address {
+	padding: 0 0 25px;
+
+	&__text {
+
+		&>* {
+			margin-bottom: 15px;
+		}
+
+		font-size: 20px;
+		margin-bottom: 20px;
+
+		& span {
+			display: block;
+		}
+
+		&> :last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__unp {
+		font-size: 0;
+		max-width: 500px;
+		width: 100%;
+
+		& :nth-child(1),
+		& :nth-child(2) {
+			display: inline-block;
+			font-size: 16px;
+			max-width: 50%;
+			width: 100%;
+			vertical-align: top;
+		}
+
+		 :nth-child(1) {
+			text-align-last: left;
+		}
+
+		 :nth-child(2) {
+			text-align: right;
+		}
+	}
+}
+
+.receipt {
+	margin-bottom: 15px;
+	
+	&__title {
+		font-size: 20px;
+		width: 250px;
+		text-transform: uppercase;
+		margin: 0 auto 5px;
+	}
+
+	&__text {
+		& > * {
+			margin-bottom: 5px;
+		}
+
+		& > :last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__number,
+	&__cashier {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		:nth-child(1) {
+			text-transform: uppercase;
+		}
+
+		:nth-child(2) {
+			text-transform: capitalize;
+		}
+	}
+}
+
+.body-receipt {
+
+	margin-bottom: 30px;
+
+	&__container {
+
+		>* {
+			margin-bottom: 10px;
+		}
+
+		>:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__text {
+		width: 100%;
+		text-align: left;
+	}
+
+	&__count {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+
+.footer-receipt {
+	text-align: left;
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
