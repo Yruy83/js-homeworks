@@ -4,35 +4,48 @@
 
 // Введення данних про категорію водійских прав.
 
-// const category = prompt('Введіть категорію прав яку Ви маєте', '')
+const category = prompt('Введіть категорію прав яку Ви маєте', '')
 
-// let rezult 
+let rezult 
 
-// switch (category) {
+switch (category) {
 
-// 	case 'A' :
-// 	case 'a' : rezult = 'мотоцикл'
-// 	break;
-// 	case 'B' :
-// 	case 'b' : rezult = 'легковий автомобіль'
-// 	break;
-// 	case 'C' :
-// 	case 'c' : rezult = 'вантажний автомобіль'
-// 	break;
-// 	case
-// 	case 'A B C' :
-// 	case 'a b c'  : rezult = 'Всі види транспорту'
-// 	break;
-// 	default : rezult = 'Введіть категорію прав латинською літерою'
-// 	break;
-// }
-// document.write(`${rezult}`)
-
-
-const a = 0
-
-const b = 0.35
-
-const v = (a%b)
-
-document.write(`${v}`)
+	case 'A' :
+	case 'a' : rezult = 'мотоцикл'
+	break;
+	case 'B' :
+	case 'b' : rezult = 'легковий автомобіль'
+	break;
+	case 'C' :
+	case 'c' : rezult = 'вантажний автомобіль'
+	break;
+	case 'A B C' :
+	case 'a b c'  : rezult = 'Всі види транспорту'
+	break;
+	default : rezult = 'Введіть категорію прав латинською літерою через пробіл'
+	break;
+}
+document.write(`<style>
+	td {
+		width: 150px; 
+		text-align: center;
+	}
+	
+	tr:hover {
+		background-color: aquamarine;
+	}
+	</style>
+	
+	<table border="2px">
+		<tbody>
+		<tr>
+			<th>Категорія прав :</th>
+			<td>${category}</td>
+		</tr>
+		<tr>
+			<th>Яким видом транспорту можете керувати :</th>
+			<td>${rezult}</td>
+		</tr>
+				
+	</tbody>
+	</table>`)
