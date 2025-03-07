@@ -5,72 +5,81 @@ if (confirm('Почати тестування ?')) {
 
 	// Задаємо змінну та записуємо в неї мінімальне значення проміжку в якому будемо генерувати числа.
 
-	const min = 1
+	const min = 1;
 
-	// Задаємо змінну та записуємо в неї максимальне значення проміжку в якому будемо генерувати числа.
+	let evenNumbersList = ''; // Змінна для зберігання парних чисел у вигляді списку
 
-	// const max = 1000 
+	let oddNumbersList = ''; // Змінна для зберігання не парних чисел у вигляді списку
 
-	// чомусь пише що не може прочитати змінну
+	let countEvenNumber = 0,      // Лічильник кількості парних чисел
+		countOddNumber = 0;          // Лічильник кількості не парних чисел
 
-	//  або можна було так записати 
-	// const min = 1, 
-	//       max = 1000
-
-	let evenNumber = ' '
-
-	let cauntEvenNumber = 0,
-		  cauntOddNumber = 0
-
-	let oddNumber = ' '
-
-	let sumEvenNumber = 0,
-		  sumOddNumber = 0
-
-	let z = ''
+	let sumEvenNumber = 0,         // Сумма парних чисел
+		sumOddNumber = 0;             // Сумма не парних чисел
 
 	document.write(`Числа сгенеровані<br>`)
-	document.write(`<ol>`)
-	for (let i = 0; i < 100; i++) {
-		let randomNumber = min + Math.floor(Math.random() * (1000))
-		document.write(`<li>${randomNumber}</li> `)
-		let rezult = randomNumber % 2
-		if (rezult === 0) {
-			cauntEvenNumber++
-			// z = randomNumber
-			
-			sumEvenNumber += randomNumber
-			evenNumber += randomNumber + ' '
+	// Формування таблиці
+
+	document.write(`<table>`);
+	document.write(`<tbody>`);
+	for (let row = 1; row <= 10; row++) {    // Створення 10-ти рядків
+		document.write(`<tr>`);
+		for (let cel = 1; cel <= 10; cel++) {        // Створення 10-ти комірок в рядку
+			let randomNumber = min + Math.floor(Math.random() * (1000));
+			// document.write(`<td>${randomNumber}</td>`)
+			if (randomNumber % 2 === 0) {                                 // Робимо умову, якщо частка від ділення сгенерованого числа на "2" дорівнює "0"
+				if (countEvenNumber % 10 === 0 && countEvenNumber > 0) {   // Ця умова допомогає створювати новій рядок коли кількість комірок в рядку вже 10. Тобто 10 комірок в рядку створюємо новій рядок і записуємо туди 10 комірок. Інакше таблиця буде виводитись в один рядок з великою кількістью комірок.
+					evenNumbersList += (`<tr></tr>`);
+				}
+				countEvenNumber++;                       // то збільшуємо лічильник парних чисел на "1"
+				sumEvenNumber += randomNumber;           // вираховуємо сумму всіх парних чисел 
+				evenNumbersList += (`<td style="color:red;">${randomNumber}</td>`); // Заносимо парне число в список <td></td> для таблиці парних чисел
+				document.write(`<td style="color:red;">${randomNumber}</td>`); // Заносимо парне число в список <td></td> для загальної таблиці чисел
+			}
+			else {                                                      // якщо частка від ділення сгенерованого числа на "2" не дорівнює "0"
+				if (countOddNumber % 10 === 0 && countOddNumber > 0) {     // Ця умова допомогає створювати новій рядок коли кількість комірок в рядку вже 10. Тобто 10 комірок в рядку створюємо новій рядок і записуємо туди 10 комірок. Інакше таблиця буде виводитись в один рядок з великою кількістью комірок.
+					oddNumbersList += (`<tr></tr>`);
+				}                                       
+				countOddNumber++;                          // то збільшуємо лічильник не парних чисел на "1"
+				sumOddNumber += randomNumber;              // вираховуємо сумму всіх не парних чисел 
+				oddNumbersList += (`<td style="color:blue;">${randomNumber}</td>`); // Додаємо не парне число в список <td></td> для таблиці не парних чисел
+				document.write(`<td style="color:blue;">${randomNumber}</td>`); // Додаємо не парне число в список <td></td> для загальної таблиці чисел
+			}
+		}
+		document.write(`</tr>`);
+	}
+	document.write(`</tbody>`);
+	document.write(`</table>`);
+
+	// let f = cauntEvenNumber > cauntOddNumber ? 'Парних чисел більше' : 'Парних чисел менше'  // Спочатку було так. Але якщо рівна кількість:))))))
+
+	if (countEvenNumber > countOddNumber) {
+		document.write(`Парних чисел більше<br>`);
+	}
+	else
+		if (countEvenNumber === countOddNumber) {
+			document.write(`Парних та не парних чисел однакова кількість<br>`);
 		}
 		else {
-			cauntOddNumber++
-			sumOddNumber += randomNumber
-			oddNumber += randomNumber + ' '
+			document.write(`Парних чисел менше<br>`);
 		}
-		document.write(`<ol>`)
-			for (let j = 0; j < cauntEvenNumber + 1; j++ ) {
-				document.write(`<li>${evenNumber}</li>`)
-			}
-			document.write(`</ol>`)
-	}
-	document.write(`</ol>`)
+		document.write(`Кількість парних чисел ${countEvenNumber}<br> Кількість непарних чисел ${countOddNumber} <br> <br> Сумма парних чисел ${sumEvenNumber}<br> Сумма не парних чисел ${sumOddNumber}<br><br>`);
 
 	document.write(`Числа парні<br>`)
-	document.write(`<style>span{color :red;margin-left: 10px}</style><br><span>${evenNumber}</span><br>`)
+	document.write(`<table>`);
+	document.write(`<tbody>`);
+	document.write(`<tr>`);
+	document.write(`${evenNumbersList}`)
+	document.write(`</tr>`);
+	document.write(`</tbody>`);
+	document.write(`</table>`);
+
 	document.write(`<br>Числа не парні<br>`)
-	document.write(`<style>.hj{color :blue;}</style><br><span class="hj">${oddNumber}</span><br><br>`)
-	// let f = cauntEvenNumber > cauntOddNumber ? 'Парних чисел більше' : 'Парних чисел менше'
-	if (cauntEvenNumber > cauntOddNumber)
-		document.write(`Парних чисел більше<br>`)
-	else
-		if (cauntEvenNumber === cauntOddNumber)
-			document.write(`Парних та не парних чисел однакова кількість<br>`)
-		else
-			document.write(`Парних чисел менше<br>`)
-	document.write(`Кількість парних чисел ${cauntEvenNumber}<br> Кількість непарних чисел ${cauntOddNumber} <br> <br> Сумма парних чисел ${sumEvenNumber}<br> Сумма не парних чисел ${sumOddNumber}`)
-
-
-
+	document.write(`<table>`);
+	document.write(`<tbody>`);
+	document.write(`<tr>`);
+	document.write(`${oddNumbersList}`)
+	document.write(`</tr>`);
+	document.write(`</tbody>`);
+	document.write(`</table>`);
 }
-
-

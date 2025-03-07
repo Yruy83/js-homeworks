@@ -1,7 +1,8 @@
 
 // Умова задачі : З клавіатури вводяться вартість товару та кількість одиниць 3 товарів. Обчислити вартість кожного товару окремо та загальну вартість. Вивести чек (як у супермаркеті) використовуючи елементи розмітки.
 
-// Етапи рішення :
+if (confirm('Почати тестування ?')) {
+	// Етапи рішення :
 
 // Введення назви товару №1
 
@@ -58,21 +59,7 @@ const allTotalSum = totalSumFirstProductPrice + totalSumSecondProductPrice + tot
 // Виведення в браузер.
 
 document.write(`
-<body>
-	<header class="header">
-		<div class="header__container">
-			<h1>Задача №6</h1>
-
-			<div class="header__text">
-				<p>
-					З клавіатури вводяться вартість товару та кількість одиниць 3 товарів. Обчислити вартість кожного товару
-					окремо та загальну вартість. Вивести чек (як у супермаркеті) використовуючи елементи розмітки.
-				</p>
-			</div>
-		</div>
-	</header>
-
-	<main class="page">
+	<div class="check">
 		<address class="address">
 			<div class="address__container">
 				<div class="address__text">
@@ -155,7 +142,6 @@ document.write(`
 				<span>${allTotalSum.toFixed(2)}</span>
 			</div>
 		</section>
-	</main>
-</body>
-
+	</div>
 `)
+}

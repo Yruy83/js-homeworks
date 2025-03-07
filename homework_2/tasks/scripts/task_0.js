@@ -1,12 +1,10 @@
 
 
-// Обчислити значення виразів:
-		// 1. S1=a+12+b
-		// 2. S2=√(((a+b)/2a) )  
-		// 3. S3=∛((a+b)c)  
-		// 4. S4=sin⁡(a/(-b)) 
 
-// Розв'язок прикладу №1: S1=a+12+b
+
+if (confirm('почати тестування ?')) {
+
+	// Розв'язок прикладу №1: S1=a+12+b
 
 // Дія перша. Обя'влення фіксованої величини у математичному виразі.
 
@@ -49,15 +47,18 @@ const sum3 = Math.cbrt( ( firstVariable + thirdVariable ) * fourthVariable )
 const sum4 = Math.sin( (firstVariable) / (-thirdVariable))
 
 
-document.write (`<h1>Перший приклад 'S1=a+12+b'</h1> 
+document.write (`<h3>Перший приклад 'S1=a+12+b'</h3> 
 <br>${sum} = ${firstVariable.toFixed(2)} + ${SECOND_VARIABLE.toFixed(2)} + ${thirdVariable.toFixed(2)}
 <br>
-<h1>Другий приклад 'S2=√(((a+b)/2a))' </h1> <br> ${sum2} = &radic;(${firstVariable.toFixed(2)} + ${thirdVariable.toFixed(2)}) / (2 * ${firstVariable.toFixed(2)})
+<h3>Другий приклад 'S2=√(((a+b)/2a))' </h3> <br> ${sum2} = &radic;(${firstVariable.toFixed(2)} + ${thirdVariable.toFixed(2)}) / (2 * ${firstVariable.toFixed(2)})
 <br>
-<h1>Третій приклад 'S3=∛((a+b)c)'</h1><br>
+<h3>Третій приклад 'S3=∛((a+b)c)'</h3><br>
 ${sum3} = &#8731;(${firstVariable.toFixed(2)} + ${thirdVariable.toFixed(2)}) * (${fourthVariable.toFixed(2)})
 <br>
-<h1>Четвертий приклад 'S4=sin⁡(a/(-b))'</h1><br>
+<h3>Четвертий приклад 'S4=sin⁡(a/(-b))'</h3><br>
 ${sum4} = sin(${firstVariable.toFixed(2)} / (-${thirdVariable.toFixed(2)}))
 <br>`)
+
+}
+
 
