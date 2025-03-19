@@ -219,6 +219,14 @@ thead {
   font-size: 20px;
   margin-bottom: 10px;
 }
+.tasks__title > pre,
+.verification__title > pre {
+  white-space: pre-line;
+}
+.tasks__title--left > pre,
+.verification__title--left > pre {
+  text-align: left;
+}
 .tasks__list,
 .verification__list {
   display: -webkit-box;
@@ -240,6 +248,17 @@ thead {
 .verification__item > :last-child,
 .verification__text > :last-child {
   margin-bottom: 0;
+}
+.tasks__item > pre, .tasks__text > pre,
+.verification__item > pre,
+.verification__text > pre {
+  display: inline-block;
+  white-space: pre-line;
+}
+.tasks__item--left > pre, .tasks__text--left > pre,
+.verification__item--left > pre,
+.verification__text--left > pre {
+  text-align: left;
 }
 .tasks__item,
 .verification__item {
@@ -494,4 +513,8 @@ hr {
 }
 .paragraf > :last-child {
   margin-bottom: 0;
+}
+
+.triangle {
+  text-align: left;
 }
